@@ -126,7 +126,7 @@
         </li>
         <li>
             <?php
-                $kalimat2 = ['aku', 'gunakan', 'satu', 'lembar', 'satu', 'lembar', 'tisu'];
+                $kalimat2 = ['aku', 'gunakan', 'satu', 'lembar', 'satu', 'lembar'];
                 echo " Count kalimat ke-2 ";
             ?>
             <div>
