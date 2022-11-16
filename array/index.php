@@ -13,7 +13,7 @@ $siswa = [
     'sipalingnetral' => 'ahmad sandi'
 ];
 
-// echo "siapa yang paling ganteng? {$siswa[1]}";
+// echo "siapa yang paling ganteng? {$siswa[1]} <br>";
 
 // Array Multidimension
 // ada array di dalam array 
@@ -26,6 +26,7 @@ $togel = [
 ];
 // cara memanggil array 
 // echo $togel[2][4];
+// echo "<br>";                                                           
 
 // Array push
 // Array push berguna untuk menerima 2 parameter, parameter pertama : untuk target, parameter kedua untuk nilai yang akan dimasukan
