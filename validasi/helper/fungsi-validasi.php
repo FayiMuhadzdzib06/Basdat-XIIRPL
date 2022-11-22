@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'fungsi_pesan_error.php';
+require_once 'fungsi-pesan-error.php';
 
 function validasi(array $listinput){
     // variabel berisi inputan form 
@@ -10,7 +10,7 @@ function validasi(array $listinput){
     $errors = [];
     
     // mengakses variabel $ListPesanError
-    global $ListPesanError;
+    global $listPesanError;
 
     // perulangan untuk array terluar (berisi nama input)
     foreach ($listinput as $input => $listrules){
@@ -28,7 +28,7 @@ function validasi(array $listinput){
                 if(!is_array($errors[$input])){
                     $errors += [$input => []];
                 }
-                array_push($errors[$input], $ListPesanError[$rules]($input));
+                array_push($errors[$input], $listPesanError[$rules]($input));
             }
             echo "<br>";
         }

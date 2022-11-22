@@ -12,8 +12,21 @@ $rules = [
 ];
 
 $errors = validasi($rules);
-echo "<pre>";
-print_r($errors);
-echo "</pre>";
+// echo "<pre>";
+// print_r($errors);
+// echo "</pre>";
 
+// Disini kita bisa melakukan proses yang harus di lakukan
+// jika tidak terjadi error validasi apapun
+
+if(count($errors) > 0){
+    $time = $_REQUEST;
+    $queryString = http_build_query([
+        'errors' => $errors,
+        'time' => $time
+    ]);
+
+    header("location: form.php?{$queryString}");
+    die();
+}
 ?>
