@@ -1,35 +1,40 @@
 <?php 
 
+require_once 'fungsi_pesan_error.php';
+
 function validasi(array $listinput){
     // variabel berisi inputan form 
     $request = $_REQUEST;
+    
+    // memanggil semua variable error
+    $errors = [];
+    
+    // mengakses variabel $ListPesanError
+    global $ListPesanError;
 
     // perulangan untuk array terluar (berisi nama input)
     foreach ($listinput as $input => $listrules){
         echo "Periksa Input <strong>{$input}</strong><br>";
 
-         //perulangan untuk sub array ( berisi nama rules)
-        foreach ($listrules as $rules){
-            echo "Rules <strong>{$rules}</strong><br>";
-            // pemeriksaan tiap rules
-            if($rules === 'required'){
-                $lolos = lolosRequired($request[$input]);
-                // penerapan nilai bool true : false 
-                echo $lolos ? "Lolos" : "Tidak Lolos";
-            }elseif($rules === 'email'){
-                $lolos = lolosEmail($request['input']);
-                echo $lolos ? "Lolos" : "Tidak Lolos";
-            }elseif($rules === 'username'){
-                $lolos = lolosUsername($request[$input]);
-                echo $lolos ? "Lolos" : "Tidak Lolos";
-            }elseif($rules === 'numeric'){
-                $lolos = lolosNumeric($request[$input]);
-                echo $lolos ? "Lolos" : "Tidak Lolos";
+        // Menggunakan foreach untuk memanggil semua fungsii yang bernama 'lolos'
+        foreach($listrules as $rules){
+            $namaFungsi = 'lolos'.ucfirst($rules);
+            // validasi sesuai input formnya
+            $lolos = $namaFungsi($request[$input]);
+            // Buatkan Bool (lolos atau tidal lolos)
+
+            // Jika tidak lolos maka munculkan pesan error
+            if(!$lolos){
+                if(!is_array($errors[$input])){
+                    $errors += [$input => []];
+                }
+                array_push($errors[$input], $ListPesanError[$rules]($input));
             }
             echo "<br>";
         }
         echo "<br>";
     } 
+    return $errors;
 }
 
 function lolosRequired($nilai){

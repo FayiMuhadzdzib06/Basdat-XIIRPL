@@ -9,19 +9,19 @@
 <body>
     <form action="proses.php">
         <div>
-            <label>Nama</label><br>
+            <label>Nama( Harus Input nama )</label><br>
             <input type="text" name="nama">
         </div>
         <div style="margin: top 10px;">
-            <label>Email</label><br>
+            <label>Email( Harus Input @ )</label><br>
             <input type="text" name="email">
         </div>
         <div style="margin: top 10px;">
-            <label>Username</label><br>
+            <label>Username( Tidak Boleh Regex )</label><br>
             <input type="text" name="username">
         </div>
         <div style="margin: top 10px;">
-            <label>Usia</label><br>
+            <label>Usia( Harus Angka )</label><br>
             <input type="text" name="usia">
         </div><br>
         <div style="margin: top 10px;">
