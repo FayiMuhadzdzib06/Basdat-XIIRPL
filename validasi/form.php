@@ -14,15 +14,15 @@
         </div>
         <div style="margin: top 10px;">
             <label>Email</label><br>
-            <input type="email" name="email">
+            <input type="text" name="email">
         </div>
         <div style="margin: top 10px;">
             <label>Username</label><br>
-            <input type="username" name="username">
+            <input type="text" name="username">
         </div>
         <div style="margin: top 10px;">
             <label>Usia</label><br>
-            <input type="usia" name="usia">
+            <input type="text" name="usia">
         </div><br>
         <div style="margin: top 10px;">
         <button>Submit</button>
