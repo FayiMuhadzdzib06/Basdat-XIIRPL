@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            padding: 25px 0 25px 0;
+            text-align: center;
+        }
+        form {
+            width: 50%;
+            height: 550px;
+            margin: 50px auto 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+        .form_input {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        label {
+            padding: 0 40px 0 30px;
+            font-weight: bold;
+        }
+        .form_input input {
+            width: calc(100% - 50%);
+            height: 30px;
+            border: none;
+            font-size: 15px;
+            border-bottom: 1px solid black;
+            padding: 10px 10px 10px 5px;
+        }
+        .jrs input {
+            margin: 0 13px;
+            width: 30px;
+            height: 30px;
+        }
+        .nama label {
+            padding-right: 100px;
+        }
+        .jrs label {
+            padding-right: 80px;
+        }
+        .Na label {
+            padding-right: 60px;
+        }
+        .Ni label {
+            padding-right: 75px;
+        }
+        .almt label {
+            padding-right: 95px;
+        }
+        .form_input_foto label {
+            padding-right: 110px;
+        }
+        .form_input input:focus {
+            outline: none;
+            border: none;
+            font-size: 15px;
+            border-bottom: 2px solid black;
+        }
+        button {
+            width: calc(100% - 85%);
+            height: 40px;
+            border: none;
+            margin: 40px auto 0;
+            font-size: 15px;
+            border-radius: 50px;
+            border: 1px solid black;
+            cursor: pointer;
+            background-color: transparent;
+            transition: .5s;
+        }
+        button:hover {
+            width: calc(100% - 500px);
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="proses.php" method="post" enctype="multipart/form-data">
+        <h1>Formulir Pendaftaran</h1>
+        <div class="form_input nama">
+            <label for="nama">Nama</label>
+            <input type="text" name="nama">
+        </div>
+        <div class="form_input jrs">
+            <label>Jurusan</label>
+            <!-- <select name="jurusan">
+                <option disabled>Pilih Jurusan</option>
+                <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                <option value="Akuntansi Keuangan Lembaga">Akuntansi Keuangan Lembaga</option>
+                <option value="Bisnis Daring dan Pemasaran">Bisnis Daring dan Pemasaran</option>
+                <option value="Otomasisasi Tata Kelola Perkantoran">Otomasisasi Tata Kelola Perkantoran</option>
+            </select> -->
+            <input type="radio" name="jurusan" value="RPL">RPL
+            <input type="radio" name="jurusan" value="AKL">AKL
+            <input type="radio" name="jurusan" value="OTKP">OTKP
+            <input type="radio" name="jurusan" value="BDP">BDP
+        </div>
+        <div class="form_input Na">
+            <label for="namaAyah">Nama Ayah</label>
+            <input type="text" name="namaAyah">
+        </div>
+        <div class="form_input Ni">
+            <label for="namaIbu">Nama Ibu</label>
+            <input type="text" name="namaIbu">
+        </div>
+        <div class="form_input almt">
+            <label for="alamat">Alamat</label>
+            <input type="text" name="alamat">
+        </div>
+        <br>
+        <div class="form_input_foto">
+            <label>Foto</label>
+            <input type="file" name="foto">
+        </div>
+        <button>Submit</button>
+    </form>
+
+    
+
+</body>
+</html>

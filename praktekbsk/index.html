@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="proses.php" method="post" enctype="multipart/form-data">
+        <div class="lapisInput">
+            <label>Nama</label>
+            <input type="text" name="nama" placeholder="Masukkan nama">
+        </div>
+        <div class="lapisInput">
+            <label>Check In</label>
+            <input type="date" name="cek">
+        </div>
+        <div class="lapisInput">
+            <label>No Kontak</label>
+            <input type="text" name="kontak" placeholder="Masukkan No Handphone">
+        </div>
+        <div class="lapisInput">
+            <label>Tipe Kamar</label>
+            <select name="tipe">
+                <option value="">Pilih tipe kamar</option>
+                <option value="1700000">Standar(1.7 Jt)</option>
+                <option value="2500000">Superior(2.5 Jt)</option>
+            </select>
+        </div>
+        <div class="lapisInput">
+            <label>Breakfast ( 50rb )</label>
+            <input type="number" name="breakfast" placeholder="Breakfast untuk berapa orang">
+        </div>
+        <div class="lapisInput">
+            <label>Contoh Kamar</label>
+            <input type="file" name="foto">
+        </div>
+        <button>Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
