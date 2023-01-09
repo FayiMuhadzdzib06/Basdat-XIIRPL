@@ -38,6 +38,7 @@
             <th>Katalog</th>
             <th>Judul Buku</th>
             <th>Pengarang</th>
+            <th>Tahun Terbit</th>
             <th>Penerbit</th>
         </tr>
             <!-- Menampilkan database Table -->
@@ -49,6 +50,7 @@
                     echo "<td>". $katalog = $row['id_katalog'] ."</td>";
                     echo "<td>". $judul = $row['judul_buku'] ."</td>";
                     echo "<td>". $pengarang = $row['pengarang'] ."</td>";
+                    echo "<td>". $thn_terbit = $row['thn_terbit'] ."</td>";
                     echo "<td>". $penerbit = $row['penerbit'] ."</td>";
                     echo "</tr>";
                 }
