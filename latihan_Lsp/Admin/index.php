@@ -154,6 +154,12 @@
     </nav>
     <h1 wel>Selamat Datang Admin <?php echo $_SESSION['admin'];?> </h1>
     <h1>Data Buku</h1>
+    <?php
+        include '../koneksi.php';
+        $buku = mysqli_query($koneksi, "SELECT * FROM buku");
+        $jumlah_buku = mysqli_num_rows($buku);
+    ?>
+    <h3>Total Buku Tersedia : <?php echo $jumlah_buku; ?> </h3>
     <table cellspacing="0">
         <!-- tambah data -->
         <a href="data-buku/tambah.php">
@@ -174,12 +180,12 @@
         $buku = mysqli_query($koneksi, "Select * from buku");
         foreach ($buku as $row) {
             echo "<tr>";
-            echo "<td>" . $id_buku = $row['id_buku'] . "</td>";
-            echo "<td>" . $katalog = $row['id_katalog'] . "</td>";
-            echo "<td>" . $judul = $row['judul_buku'] . "</td>";
-            echo "<td>" . $pengarang = $row['pengarang'] . "</td>";
-            echo "<td>" . $thn_terbit = $row['thn_terbit'] . "</td>";
-            echo "<td>" . $penerbit = $row['penerbit'] . "</td>";
+            echo "<td>" . $row['id_buku'] . "</td>";
+            echo "<td>" . $row['id_katalog'] . "</td>";
+            echo "<td>" . $row['judul_buku'] . "</td>";
+            echo "<td>" . $row['pengarang'] . "</td>";
+            echo "<td>" . $row['thn_terbit'] . "</td>";
+            echo "<td>" . $row['penerbit'] . "</td>";
         ?>
             <td>
                 <a href="data-buku/proses-hapus.php?id_buku=<?php echo $row['id_buku']; ?>" class="hapus" onclick="return confirm('Yakin Mau di hapus Deck??')"> Hapus</a>
@@ -193,6 +199,12 @@
 
     <!-- data anggota -->
     <h1>Data Anggota</h1>
+    <?php
+        include '../koneksi.php';
+        $anggota = mysqli_query($koneksi, "SELECT * FROM anggota");
+        $jumlah_anggota = mysqli_num_rows($anggota);
+    ?>
+    <h3>Total Anggota : <?php echo $jumlah_anggota; ?> </h3>
     <table ang cellspacing="0">
         <!-- tambah data -->
         <a href="data-anggota/tambah.php">
@@ -212,11 +224,11 @@
         $anggota = mysqli_query($koneksi, "Select * from anggota");
         foreach ($anggota as $row) {
             echo "<tr>";
-            echo "<td>" . $id = $row['id_anggota'] . "</td>";
-            echo "<td>" . $nama = $row['nama'] . "</td>";
-            echo "<td>" . $noTelp = $row['no_telp'] . "</td>";
-            echo "<td>" . $alamat = $row['alamat'] . "</td>";
-            echo "<td>" . $email = $row['email'] . "</td>";
+            echo "<td>" . $row['id_anggota'] . "</td>";
+            echo "<td>" . $row['nama'] . "</td>";
+            echo "<td>" . $row['no_telp'] . "</td>";
+            echo "<td>" . $row['alamat'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
         ?>
             <td>
                 <a href="data-anggota/proses-hapus.php?id_anggota=<?php echo $row['id_anggota']; ?>" class="hapus" onclick="return confirm('Yakin Mau di hapus Deck??')"> Hapus</a>
