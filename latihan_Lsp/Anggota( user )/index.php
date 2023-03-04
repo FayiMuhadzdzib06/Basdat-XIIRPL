@@ -224,6 +224,7 @@
                 ?>
             </h4>
             <a href='Update-Profile/update-anggota.php?id_anggota=<?php echo $nama['id_anggota']; ?>' class="up"> Customize</a>
+            <a href='pesan.php' class="up"> Pesanan Anda</a>
             <hr>
             <a href="../logout.php" class="up">
                 <i class="fa fa-sign-out" aria-hidden="true" style="padding-right: 5px;"></i>
@@ -250,26 +251,23 @@
                 $buku = mysqli_query($koneksi, "Select * from buku");
                 foreach ($buku as $row) {
                     echo "<tbody>";
-                    echo "<td>" . $id_buku = $row['id_buku'] . "</td>";
-                    echo "<td>" . $katalog = $row['id_katalog'] . "</td>";
-                    echo "<td>" . $judul = $row['judul_buku'] . "</td>";
-                    echo "<td>" . $pengarang = $row['pengarang'] . "</td>";
-                    echo "<td>" . $thn_terbit = $row['thn_terbit'] . "</td>";
-                    echo "<td>" . $penerbit = $row['penerbit'] . "</td>";
+                    echo "<td>" . $row['id_buku'] . "</td>";
+                    echo "<td>" . $row['id_katalog'] . "</td>";
+                    echo "<td>" . $row['judul_buku'] . "</td>";
+                    echo "<td>" . $row['pengarang'] . "</td>";
+                    echo "<td>" . $row['thn_terbit'] . "</td>";
+                    echo "<td>" . $row['penerbit'] . "</td>";
                     echo "<td>" . "Rp. " . number_format($row['harga']) . " ,-" . "</td>";
                     ?>
                     <td>
-                        <a href="keranjang.php?id_buku=<?php echo $row['id_buku']; ?>">
-                            Add
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        </a>
+                        <a href="keranjang.php?id_buku=<?php echo $row['id_buku']?> & action=add">pesan</a>
                     </td>
                 <?php
                     echo "</tbody>";
                 }
                 ?>
             </table>
-            <h1> Total Semua Harga Buku :
+            <h3 style="padding: 10px 0 30px 0;"> Total Semua Harga Buku :
                 <?php 
                     $db = mysqli_query($koneksi, "SELECT * FROM buku;");
                     while($r = mysqli_fetch_array($db)){
@@ -279,7 +277,7 @@
                     echo "Rp. " . number_format($totalHarga) . " ,-";
                     
                 ?>
-            </h1>
+            </h3>
         </main>
     </div>
 

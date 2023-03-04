@@ -7,8 +7,10 @@
     $pengarang = $_POST['pengarang'];
     $thn_terbit = $_POST['thn_terbit'];
     $penerbit = $_POST['penerbit'];
+    $harga = $_POST['harga'];
+    $qty = $_POST['qty'];
 
-    $input = mysqli_query($koneksi, "UPDATE buku SET id_katalog='$katalog', judul_buku='$judul', pengarang='$pengarang', thn_terbit='$thn_terbit', penerbit='$penerbit' WHERE id_buku='$id_buku'");
+    $input = mysqli_query($koneksi, "UPDATE buku SET id_katalog='$katalog', judul_buku='$judul', pengarang='$pengarang', thn_terbit='$thn_terbit', penerbit='$penerbit', harga='$harga', qty='$qty' WHERE id_buku='$id_buku'");
 
     if($input){
         ?>

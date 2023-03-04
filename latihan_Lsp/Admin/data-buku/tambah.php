@@ -151,6 +151,14 @@
                 <label><i class="fa fa-user-o" aria-hidden="true"></i></label>
                 <input type="text" name="penerbit" placeholder="Masukkan Nama Penerbit" required>
             </div>
+            <div class="lapis-input">
+                <label><i class="fa fa-user-o" aria-hidden="true"></i></label>
+                <input type="number" name="harga" placeholder="Masukkan Nama Harga" required>
+            </div>
+            <div class="lapis-input">
+                <label><i class="fa fa-user-o" aria-hidden="true"></i></label>
+                <input type="number" name="qty" placeholder="Masukkan Quantity" required>
+            </div>
             <button type="submit" class="btn" name="submit">Submit</button>
         </form>
     </div>
